@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 #_*_ coding:utf-8 _*_
 '''
-此為部屬普羅米修斯server用
+此為部屬普羅米修斯exporter用
 '''
 import os,re,wget,tarfile,pwd,grp,shutil
 
