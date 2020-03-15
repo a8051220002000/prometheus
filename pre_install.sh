@@ -23,4 +23,7 @@ python3 -m ensurepip
 pip3 install --upgrade pip
 pip3 install wget
 
+echo '修改selinux請重開機'
+echo 'init 6'
+
 
