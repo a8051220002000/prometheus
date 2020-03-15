@@ -1,4 +1,0 @@
- - job_name: 'node_exporter_centos'
-    scrape_interval: 5s
-    static_configs:
-      - targets: [IP+':9100']

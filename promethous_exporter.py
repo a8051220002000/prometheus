@@ -8,7 +8,7 @@ import os,re,wget,tarfile,pwd,grp,shutil,socket
 user = 'nodeusr'
 DATA_URL = 'https://github.com/prometheus/node_exporter/releases/download/v0.17.0/node_exporter-0.17.0.linux-amd64.tar.gz'
 SYSTEMD_URL = 'https://raw.githubusercontent.com/a8051220002000/prometheus/master/node_exporter.service'
-NODE_URL = ''
+NODE_URL = 'https://raw.githubusercontent.com/a8051220002000/prometheus/master/prometheus_add.yml'
 DIR_NAME = 'node_exporter-0.17.0.linux-amd64'
 DST = '/usr/local/bin/'
 
@@ -57,19 +57,7 @@ def start_service():
   os.system("systemctl enable node_exporter")
   os.system("systemctl start node_exporter")
 
-def check_ip(ipAddr):
- compile_ip=re.compile('^(1\d{2}|2[0-4]\d|25[0-5]|[1-9]\d|[1-9])\.(1\d{2}|2[0-4]\d|25[0-5]|[1-9]\d|\d)\.(1\d{2}|2[0-4]\d|25[0-5]|[1-9]\d|\d)\.(1\d{2}|2[0-4]\d|25[0-5]|[1-9]\d|\d)$') 
- if compile_ip.match(ipAddr):
-   wget.download(DATA_URL, out=out_fname)
-   
- else:
-   #無窮
-   IP = input('IP輸入錯誤,重新輸入: ')
-   check_ip(IP)
-   
 
-
-'''
 download_file()
 createUser()
 # 獲取userid以及groupid 為了chown用
@@ -78,6 +66,4 @@ gid = grp.getgrnam(user).gr_gid
 mv_file()
 firewalld()
 start_service()
-'''
-IP = input('exporter部屬完成，請輸入pormetheus_server端ip: ')
-check_ip(IP)
+
