@@ -1,6 +1,6 @@
 #部屬之前請依照順序安裝
 
-1.
+1.安裝相依套件(包含python3 pip3 修改selinux )
 sh pre_install.sh
 
 2.再來請查看是要部屬server or exporter
