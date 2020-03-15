@@ -6,10 +6,12 @@ sh pre_install.sh
 
 2.再來請查看是要部屬server or exporter
 
-server 
+server:
+
 python3 promethous_server.py
 
-exporter
+exporter:
+
 python3 promethous_exporter.py
 
 
